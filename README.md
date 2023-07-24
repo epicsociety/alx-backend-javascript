@@ -2,7 +2,7 @@
 ## I will update this README.md often
 
 ## Javascript ES6 Basics
-**These are some of useful resources:**
+**These are some of useful resources:** <br/>
 [w3schools] (https://www.w3schools.com/js/js_es6.asp)<br />
 [mdn web docs - Statements and declarations] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements)<br/>
 [mdn web docs - Arrow function expressions] (https://developer.mozilla.org/enUS/docs/Web/JavaScript/Reference/Functions/Arrow_functions)<br/>
