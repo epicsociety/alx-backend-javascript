@@ -2,9 +2,9 @@
 ## I will update this README.md often
 
 ## Javascript ES6 Basics
-**These are some of useful --resources--
-[w3schools] (https://www.w3schools.com/js/js_es6.asp)
-[mdn web docs - Statements and declarations] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements)
+**These are some of useful --resources--**
+[w3schools] (https://www.w3schools.com/js/js_es6.asp)__
+[mdn web docs - Statements and declarations] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements)__
 [mdn web docs - Arrow function expressions] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 [mdn web docs - Default parameters] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
 [mdn web docs - Rest parameters] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameter)
