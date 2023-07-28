@@ -1,23 +1,24 @@
-export default class Car{
-    constructor(brand, motor, color){
-        this._brand = brand;
-        this._motor = motor;
-        this._color = color;
-    }
+/* eslint-disable no-underscore-dangle */
+export default class Car {
+  constructor(brand, motor, color) {
+    this._brand = brand;
+    this._motor = motor;
+    this._color = color;
+  }
 
-    get brand() {
-        return this._brand;
-    }
+  get brand() {
+    return this._brand;
+  }
 
-    get motor() {
-        return this._motor;
-    }
+  get motor() {
+    return this._motor;
+  }
 
-    get color() {
-        return this._color;
-    }
+  get color() {
+    return this._color;
+  }
 
-    cloneCar() {
-        return new Car;
-    }
+  cloneCar() {
+    return new this.constructor();
+  }
 }
