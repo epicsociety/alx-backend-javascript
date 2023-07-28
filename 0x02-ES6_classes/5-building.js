@@ -1,13 +1,11 @@
 /* eslint-disable no-underscore-dangle */
-/* eslint-disable class-methods-use-this */
-
 export default class Building {
   constructor(sqft) {
-    // eslint-disable-next-line  no-prototype-builtins
-    if (!(Object.getPrototypeOf(this).hasOwnProperty('evacuationWarningMessage'))) {
-      throw new Error('Class extending Building must override evacuationWarningMessage');
-    } else {
+    // eslint-disable-next-line no-prototype-builtins
+    if (Object.getPrototypeOf(this).hasOwnProperty('evacuationWarningMessage')) {
       this.sqft = sqft;
+    } else {
+      throw new Error('Class extending Building must override evacuationWarningMessage');
     }
   }
 
@@ -20,6 +18,15 @@ export default class Building {
       this._sqft = newsqft;
     } else {
       throw new Error();
+    }
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  evacuationWarningMessage() {
+    try {
+      throw new Error('Class extending Building must override evacuationWarningMessage');
+    } catch (err) {
+      console.log(err.message); // Print the error message without terminating the script
     }
   }
 }
