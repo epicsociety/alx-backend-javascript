@@ -1,7 +1,11 @@
 export default function cleanSet(set, startString) {
+  if (startString === '') {
+    return '';
+  }
+
   const concatString = [];
   set.forEach((value) => {
-    if (startString !== '' && value.startsWith(startString)) {
+    if (value.startsWith(startString)) {
       concatString.push(value.slice(startString.length));
     }
   });
