@@ -1,9 +1,19 @@
 /* eslint-disable no-underscore-dangle */
 export default class HolbertonCourse {
   constructor(name, length, students) {
-    this._name = name;
-    this._length = length;
-    this._students = students;
+    if (name !== 'string') {
+      throw new TypeError('Name must be a string');
+    }
+    if (length !== 'number') {
+      throw new TypeError('Length must be a number');
+    }
+    if (!Array.isArray(students) || students.every((item) => typeof item !== 'string')) {
+      throw new TypeError('Students must be an array of strings');
+    } else {
+      this._name = name;
+      this._length = length;
+      this._students = students;
+    }
   }
 
   get name() {
@@ -36,7 +46,7 @@ export default class HolbertonCourse {
 
   set students(newstudents) {
     if (Array.isArray(newstudents)) {
-      for (let i = 0; i < newstudents.length; i += 1) {
+      for (const i of newstudents) {
         if (typeof newstudents[i] !== 'string') {
           throw new TypeError('Students must be an array of strings');
         }
