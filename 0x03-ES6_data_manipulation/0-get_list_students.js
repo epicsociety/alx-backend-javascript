@@ -17,6 +17,7 @@ export default function getListStudents() {
   };
 
   const array1 = [];
-  array1.push(obj1, obj2, obj3);
+
+  array1.unshift(obj1, obj2, obj3);
   return array1;
 }
