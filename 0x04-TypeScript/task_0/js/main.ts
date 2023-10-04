@@ -9,14 +9,14 @@ const user1: Student = {
     firstName: "Hing",
     lastName:  "Jens",
     age: 23,
-    location: "Thailand"
+    location: "Kenya"
 };
 
 const user2: Student = {
     firstName: "Dean",
     lastName:  "Reel",
     age: 17,
-    location: "Island"
+    location: "Island0"
 }
 
 const studentsList: Student[] = [user1, user2]
