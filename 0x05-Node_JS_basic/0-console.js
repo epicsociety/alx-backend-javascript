@@ -1,5 +1,5 @@
+function displayMessage(msg) {
+    process.stdout.write(msg + '\n');
+};
 
-function displayMessage(args){
-  sys.stdout(args)};
-
-module.exports = myFunction;
+module.exports = displayMessage;
