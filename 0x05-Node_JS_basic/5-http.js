@@ -1,5 +1,6 @@
 const http = require('http');
-const fs = require('fs'); // Add this line to require the 'fs' module
+const fs = require('fs');
+const { argv } = require('process');
 
 const port = 1245;
 const app = http.createServer((req, res) => {
@@ -13,8 +14,8 @@ const app = http.createServer((req, res) => {
     res.write('This is the list of our students\n');
 
     // Read the database file asynchronously
-    const databasePath = process.argv[2]; // Get the database path from the command line arguments
-    fs.readFile(databasePath, 'utf8', (err, data) => {
+    // const databasePath = process.argv[2]; // Get the database path from the command line arguments
+    fs.readFile(argv[2], 'utf8', (err, data) => {
       if (err) {
         res.end('Cannot load the database\n');
       } else {
