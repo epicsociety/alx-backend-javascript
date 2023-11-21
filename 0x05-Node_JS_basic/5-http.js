@@ -11,7 +11,8 @@ const app = http.createServer((req, res) => {
 
     // Respond with the message for the root path
     res.end('Hello Holberton School!\n');
-  } else if (req.url === '/students') {
+  } 
+  if (req.url === '/students') {
     // Set the response headers
     res.writeHead(200, { 'Content-Type': 'text/plain' });
 
@@ -60,14 +61,7 @@ const app = http.createServer((req, res) => {
         res.end();
       }
     });
-  } else {
-    // Set the response headers for unknown paths
-    res.writeHead(404, { 'Content-Type': 'text/plain' });
-
-    // Respond with a 404 message for unknown paths
-    res.end('Not Found\n');
-  }
-});
+}});
 app.listen(port);
 
 module.exports = app;
