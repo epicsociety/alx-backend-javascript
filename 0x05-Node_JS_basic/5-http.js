@@ -50,9 +50,10 @@ const app = http.createServer((req, res) => {
         Object.keys(fieldCounts).forEach((field) => {
           res.write(`Number of students in ${field}: ${fieldCounts[field]}. List: ${fieldLists[field].join(', ')}\n`);
         });
+
+        res.end();
       }
     });
-    res.end();
   }
 });
 app.listen(port);
