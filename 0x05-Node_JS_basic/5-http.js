@@ -1,6 +1,5 @@
 const http = require('http');
-const fs = require('fs');
-const { argv } = require('process');
+const fs = require('fs'); // Add this line to require the 'fs' module
 
 const port = 1245;
 const app = http.createServer((req, res) => {
@@ -14,10 +13,10 @@ const app = http.createServer((req, res) => {
     res.write('This is the list of our students\n');
 
     // Read the database file asynchronously
-    // const databasePath = process.argv[2]; // Get the database path from the command line arguments
-    fs.readFile(argv[2], 'utf8', (err, data) => {
+    const databasePath = process.argv[2]; // Get the database path from the command line arguments
+    fs.readFile(databasePath, 'utf8', (err, data) => {
       if (err) {
-        res.end('Cannot load the database\n');
+        res.end(err.message);
       } else {
         const lines = data.split('\n').filter((line) => line.trim() !== '');
         const columnNames = lines[0].split(',');
@@ -51,10 +50,9 @@ const app = http.createServer((req, res) => {
         Object.keys(fieldCounts).forEach((field) => {
           res.write(`Number of students in ${field}: ${fieldCounts[field]}. List: ${fieldLists[field].join(', ')}\n`);
         });
-
-        res.end();
       }
     });
+    res.end();
   }
 });
 app.listen(port);
