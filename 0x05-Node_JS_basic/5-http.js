@@ -6,15 +6,11 @@ const app = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
   if (req.url === '/') {
-    // Set the response headers
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-
-    // Respond with the message for the root path
-    res.end('Hello Holberton School!\n');
-  } 
+    res.write('Hello Holberton School!');
+    res.end();
+  }
   if (req.url === '/students') {
-    // Set the response headers
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.write('This is the list of our students\n');
 
     // Read the database file asynchronously
     const databasePath = process.argv[2]; // Get the database path from the command line arguments
@@ -48,9 +44,6 @@ const app = http.createServer((req, res) => {
             fieldLists[field] = [student.firstname];
           }
         }
-
-        // Log the list of students
-        res.write('This is the list of our students\n');
         res.write(`Number of students: ${lines.length - 1}\n`);
 
         // Log the count and list of students for each field
@@ -61,7 +54,8 @@ const app = http.createServer((req, res) => {
         res.end();
       }
     });
-}});
+  }
+});
 app.listen(port);
 
 module.exports = app;
